@@ -1,0 +1,58 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled55.ipynb",
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RAI2anqrOanQ",
+        "outputId": "08fc00a3-47a3-4fbb-e740-78101a368e96"
+      },
+      "source": [
+        "from sympy import *\n",
+        "x=symbols('x')\n",
+        "F=x*4+3*x*2+10\n",
+        "y=diff(F,x) \n",
+        "print(y)\n",
+        "X=int(input(\"enter x value:\"))\n",
+        "iteration=1 \n",
+        "n=0.1 \n",
+        "epoch=2\n",
+        "while (iteration >= epoch) :\n",
+        "   Y=y.subs(x,X)\n",
+        "   deltax=-n*Y\n",
+        "   newx = X + deltax\n",
+        "   iteration= iteration + 1\n",
+        "   X=newx\n",
+        "print(\"final x =\",X)\n",
+        "print(\"Minimum value of f(x)\",F.subs(x,X))"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "10\n",
+            "enter x value:-1\n",
+            "final x = -1\n",
+            "Minimum value of f(x) 0\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    }
+  ]
+}
